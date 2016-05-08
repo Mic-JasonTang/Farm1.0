@@ -1,0 +1,59 @@
+@charset "utf-8";
+/* CSS Document */
+@media screen and (max-width:400px){ 
+   body{
+	font-family:Arial, Helvetica, sans-serif;
+}
+span{
+	color:#6f6f6f;
+	font-size:18px;
+}
+.wrap{
+	width:100%;
+	margin:0 auto;
+}
+.logo{
+	margin:60px auto 50px auto;
+}
+.logo img{
+	max-width:100%;
+}
+p a{
+	color:#eee;
+	font-size:13px;
+	margin-left:15px;
+	padding:5px;
+	background:#FF3366;
+	text-decoration:none;
+}
+p a:hover{
+	color: #fff;
+}
+ }
+ @media screen and (min-width:1000px){
+ 
+ body{
+	font-family:Arial, Helvetica, sans-serif;
+}
+.wrap{
+	width:1000px;
+	margin:0 auto;
+}
+.logo{
+	width:430px;
+	position:absolute;
+	top:25%;
+	left:35%;
+}
+p a{
+	color:#eee;
+	font-size:13px;
+	margin-left:30px;
+	padding:5px;
+	background:#FF3366;
+	text-decoration:none;
+}
+p a:hover{
+	color: #fff;
+}
+ }

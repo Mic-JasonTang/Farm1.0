@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>Farm1.0</display-name>
+  <servlet>
+    <servlet-name>UserValidateServlet</servlet-name>
+    <servlet-class>com.Jason.User.Servlet.UserValidateServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>com.Jason.User.Servlet.LoginServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>RegisterServlet</servlet-name>
+    <servlet-class>com.Jason.User.Servlet.RegisterServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>UpdateServlet</servlet-name>
+    <servlet-class>com.Jason.User.Servlet.UpdateServlet</servlet-class>
+  </servlet>
+    <servlet>
+        <servlet-name>UploadPhotoServlet</servlet-name>
+        <servlet-class>com.Jason.File.Servlet.UploadPhotoServlet</servlet-class>
+    </servlet>
+  <servlet>
+    <servlet-name>PutawayServlet</servlet-name>
+    <servlet-class>com.Jason.SellerCenterPutaway.PutawayServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>UploadPhotoServlet</servlet-name>
+    <url-pattern>/servlet/UploadPhotoServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>PutawayServlet</servlet-name>
+    <url-pattern>/servlet/PutawayServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UserValidateServlet</servlet-name>
+    <url-pattern>/servlet/UserValidateServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/servlet/LoginServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>RegisterServlet</servlet-name>
+    <url-pattern>/servlet/RegisterServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UpdateServlet</servlet-name>
+    <url-pattern>/servlet/UpdateServlet</url-pattern>
+  </servlet-mapping>
+  
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+    <filter>
+        <filter-name>UsernameCheckFilter</filter-name>
+        <filter-class>com.Jason.Filter.UsernameCheckFilter</filter-class>
+    </filter>
+    
+    <filter-mapping>
+        <filter-name>UsernameCheckFilter</filter-name>
+        <url-pattern>/update.jsp</url-pattern>
+        <url-pattern>/myFarm.jsp</url-pattern>
+    </filter-mapping>
+    
+    <error-page>
+        <error-code>404</error-code>
+        <location>/error.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>403</error-code>
+        <location>/error.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>500</error-code>
+        <location>/500.jsp</location>
+    </error-page>
+</web-app>
