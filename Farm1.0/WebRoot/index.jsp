@@ -98,67 +98,49 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     </div>
 </div>
 <div class="hTitle">
-<div class="first_en fAr"><span class="big_en f32"><a href="#" Layout="None">INTRODUCTION</a></span><span class="f18"><a href="#"></a></span></div><div class="first_china f25"><a href="#" Layout="None" style="color:#6f6f6f;">公司简介</a></div><hr size="2" color="#6f6f6f" style="filter:alpha(opacity=10,finishopacity=100,style=1,startX=100,startY=100,finishX=0,finishY=0);width:95%;"> </div>
+<div id="head" style="padding-left:3%">
+<div class="first_en fAr">
+<span class="big_en f32">
+<a href="#" layout="None">INTRODUCTION</a>
+</span>
+<span class="f18">
+<a href="#"></a>
+</span>
 </div>
-<div class="f18"  style="padding-top:2%;padding-left:2%;">
+<div class="first_china f25">
+<a href="#" Layout="None" style="color:#6f6f6f;">公司简介</a>
+</div>
+</div>
+<hr size="2" color="#6f6f6f" style="filter:alpha(opacity=10,finishopacity=100,style=1,startX=100,startY=100,finishX=0,finishY=0);width:95%;"> 
+</div>
+<div class="f18"  style="padding-top:2%;padding-left:4%;">
 <p>西安乐农有限责任公司是目前三农电商行业新兴的线上认领及线下体验平台</p>
 <p>"乐农"意为使农民快乐，充分体现了本公司的特点和宗旨。</p>
 <p>公司主要运营项目为"开心农场"网站，该网站为客户提供认领土地、果树、线上买卖农产品及田园生活体验等产品和服务。</p>
 <p>本公司致力于推动三农电商领域的发展，坚持绿色环保的理念，坚决贯彻可持续发展的政策，保证为每一位客户提供优质的土地、绿色健康的农产品与有价值的旅游体验。</p>
-<p>同时本公司坚持不断创新的发展理念，在保证产品质量的同时，不断完善网站的各项功能，并在三农电商领域探索开拓新的项目，同时开拓城市消费市场新的增长点，立志成为行业的领先者</p></div>
-<div class="first_en fAr"><span class="big_en f32"><a href="#" Layout="None">WEBSITE</a></span><span class="f18"><a href="#"></a></span></div><div class="first_china f25"><a href="#" Layout="None" style="color:#6f6f6f;">网站简介</a></div><hr size="2" color="#6f6f6f" style="filter:alpha(opacity=10,finishopacity=100,style=1,startX=100,startY=100,finishX=0,finishY=0);width:95%;"> </div></div>
+<p>同时本公司坚持不断创新的发展理念，在保证产品质量的同时，不断完善网站的各项功能，并在三农电商领域探索开拓新的项目，同时开拓城市消费市场新的增长点，立志成为行业的领先者</p>
 </div>
-<div class="f18"  style="padding-top:2%;padding-left:2%;">
+<div id="head" style="padding-left:3%; padding-top:3%;">
+<div class="first_en fAr">
+<span class="big_en f32">
+<a href="#" layout="None">WEBSITE</a>
+</span>
+<span class="f18"><a href="#"></a></span>
+</div>
+<div class="first_china f25">
+<a href="#" layout="None" style="color:#6f6f6f;">网站简介</a>
+</div>
+</div>
+<hr size="2" color="#6f6f6f" style="filter:alpha(opacity=10,finishopacity=100,style=1,startX=100,startY=100,finishX=0,finishY=0);width:95%;"> </div></div>
+<div class="f18"  style="padding-top:2%;padding-left:4%;">
 <p>"开心农场"电子商务网站是一个C2C认领土地、果树及线上交易的网站</p>
 <p>本网站旨在通过提高整合郊区及农村或边远地区的农舍拥有的土地等资源，开发其利用空间，提高农舍资源的单位收益，同时满足城市居民追求健康生活，体验田园生活的需要。</p>
 <P>本网站采用农民帮种及消费者体验种植等形式，消费者可以通过网站全程监控果树和土地上农作物的生长过程，待农产品成熟后，买家可以选择自己来到农场采摘,也可以选择邮寄的方式送到家中。</p>
 <p>除此之外，消费者还可根据自己的需要在本网站线上购买农产品，操作简单方便。让消费者足不出户即可享受到最天然无公害可靠的绿色产品。</p>
-</p></div>
-<div class="footer" style="text-align:center;">
+</div>
+<div class="footer" style="text-align:center;padding-top:2%;">
 <a href="#" target="_blank" style="color:#6f6f6f;">版权申明</a> | <a href="#" target="_blank" style="color:#6f6f6f;">陕ICP备110258258号</a> </p>
 <p>Copyright © 2016 - 2018 联系我们:1150689758@qq.com</p>
-</div>
-<!--会员登录表单-->
-<div class="login">
-    <div class="login-title">会员登录<span><a href="javascript:void(0);" class="close-login">关闭</a></span></div>
-    <div class="login-input-content">
-        <div class="login-input">
-            <label>用&nbsp;户&nbsp;&nbsp;名：</label>
-            <input type="text" placeholder="请输入用户名"  name="info[username]" id="username" class="list-input"/>
-        </div>
-        <div class="login-input">
-            <label>登录密码：</label>
-            <input type="password" placeholder="请输入登录密码" name="info[password]" id="password" class="list-input"/>
-        </div>
-    </div>
-    <div class="login-button"><a href="javascript:void(0);" id="login-button-submit">登录会员</a></div>
-</div>
-<!--会员注册表单-->
-<div class="reg">
-    <div class="reg-title">新用户注册<span><a href="javascript:void(0);" class="close-reg">关闭</a></span></div>
-    <div class="reg-input-content">
-        <div class="reg-input">
-            <label>用&nbsp;户&nbsp;&nbsp;名：</label>
-            <input type="text" placeholder="请输入用户名"  name="info[username]" id="username" class="list-input"/>
-        </div>
-        <div class="reg-input">
-            <label>登录密码：</label>
-            <input type="password" placeholder="请输入登录密码" name="info[password]" id="password" class="list-input"/>
-        </div>
-         <div class="reg-input">
-            <label>确认密码：</label>
-            <input type="password" placeholder="再次输入密码" name="info[password]" id="password" class="list-input"/>
-        </div>
-        <div class="reg-input">
-            <label>手机号</label>
-            <input type="text" placeholder="请输入手机号" name="info[phone]" id="phone" class="list-input"/>
-        </div>
-        <div class="reg-input">
-            <label>地址：</label>
-            <input type="password" placeholder="请输入您的地址" name="info[address]" id="address" class="list-input"/>
-        </div>
-    </div>
-    <div class="reg-button"><a href="javascript:void(0);" id="reg-button-submit">注册</a></div>
 </div>
 </body>
 </html>
