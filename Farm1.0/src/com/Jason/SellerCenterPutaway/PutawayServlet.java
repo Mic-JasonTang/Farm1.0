@@ -80,6 +80,8 @@ public class PutawayServlet extends HttpServlet {
 		String productPrice = request.getParameter("productPrice");
 		String address = request.getParameter("address");
 		String description = request.getParameter("description");
+		description = description.replaceAll(" ", "&nbsp;");
+		description = description.replaceAll("\n", "<br>");
 //将获取到的数据打印出来
 		System.out.println(productName + "-" + productClass + "-"
 				+ productPrice + "-" + address + "-" + description);

@@ -110,6 +110,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div id="menu" style="padding-top:5%;">
 		<table align="center" >
 		<tr>
+<!-- 		循环输出商品信息 -->
 			<c:forEach begin="1" end="4" >
 			<td width = "20%">
 				 <ul style="padding-left:5%;">
@@ -130,12 +131,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</td>
 			</c:forEach>
 		</tr>
+		
 		<tr>
-		</tr>
-		<tr>
+<!-- 		换了一行 -->
 		<c:forEach begin="1" end="4" >
 			<td width = "20%">
-				 <ul style="padding-left:5%;">
+				 <ul style="padding-left:5%; padding-top:5%;">
 		            <li><a href="product_detail.jsp"><img src="img/17.jpg" width="314" height="220" /></a>
 		            <p name="title" style="color:green"><img src="product_ico/tuijian.gif">
 		                              【爆款】肥沃的土地</p>

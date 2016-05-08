@@ -47,7 +47,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		}
 		<%
 			session.removeAttribute("saveFailInfo");
-			session.removeAttribute("saveInfo");
+			session.removeAttribute("saveSuccessInfo");
 			session.removeAttribute("uploadInfo");
 		%>
 	};
@@ -99,9 +99,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						</div>
 					</li>
 				</ol>
-				<div class="step_line"></div>
+				<div class="step_line">
+				</div>
+				
 			</div>
 			<div class="content">
+			
+				<div align="right">
+					<a href="sellerCenterPutaway.jsp"><font style="color:#2222FF">&lt;点此继续尚需商品信息&gt;</font></a>
+				</div>
 				<div id="step1" class="step hide">
 					<div id="main">
     <div id="body" class="light">
