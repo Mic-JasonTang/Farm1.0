@@ -76,7 +76,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</form>
 
 	<a href="register.jsp">
-		<button type="button" class="register-tis">还有没有账号？</button>
+		<button type="button" class="register-tis">注册为新用户</button>
 	</a>
 	<br>
 	<a href="index.jsp">

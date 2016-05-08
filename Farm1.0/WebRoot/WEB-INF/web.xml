@@ -69,6 +69,9 @@
         <filter-name>UsernameCheckFilter</filter-name>
         <url-pattern>/update.jsp</url-pattern>
         <url-pattern>/myFarm.jsp</url-pattern>
+        <url-pattern>/sellerCenterPutaway.jsp</url-pattern>
+        <url-pattern>/sellerCenterUploadPhotoes.jsp</url-pattern>
+        <url-pattern>/chat.jsp</url-pattern>
     </filter-mapping>
     
     <error-page>
