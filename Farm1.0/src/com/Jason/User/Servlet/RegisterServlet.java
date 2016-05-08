@@ -93,7 +93,7 @@ public class RegisterServlet extends HttpServlet {
 		} else {
 			// 注册失败
 			request.getSession().setAttribute("registerFaild", "注册失败");
-			response.sendRedirect("/Farm1.0/register.jsp");
+			response.sendRedirect(request.getContextPath() + "/register.jsp");
 		}
 		
 	}

@@ -133,9 +133,9 @@ public class UpdateServlet extends HttpServlet {
 				UpdatePassword(password_again, username);
 			}
 			request.getSession().setAttribute("UpdateInfo", "修改成功");
-			response.sendRedirect("/Farm1.0/update.jsp");
+			response.sendRedirect(request.getContextPath() + "/update.jsp");
 		} else { //表示登录失效，需要重写登录
-			response.sendRedirect("/Farm1.0/login.jsp");
+			response.sendRedirect(request.getContextPath() + "/login.jsp");
 		}
 	}
 

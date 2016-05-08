@@ -32,23 +32,24 @@ public class PutawayServlet extends HttpServlet {
 	}
 
 	// 把商品信息放入数据库
-	public boolean save(String productName, String productClass,
+	public boolean save(String userId,String productName, String productClass,
 			 String productPrice, String address, String description) {
 		boolean bool = false;
 		conn = DB.getConn();
 		String sql = "";
 		if (productClass.equals(LAND)) {
-			sql = "insert into land_info values(null,?,?,?,?,now())";
+			sql = "insert into land_info values(null,?,?,?,?,?,now())";
 		} else if (productClass.equals(TREE)) {
-			sql = "insert into tree_info values(null,?,?,?,?,now())";
+			sql = "insert into tree_info values(null,?,?,?,?,?,now())";
 		}
 		pstmt = DB.createPstmt(conn, sql);
 		
 		try {
-			pstmt.setString(1, productName);
-			pstmt.setString(2, productPrice);
-			pstmt.setString(3, address);
-			pstmt.setString(4, description);
+			pstmt.setString(1, userId);
+			pstmt.setString(2, productName);
+			pstmt.setString(3, productPrice);
+			pstmt.setString(4, address);
+			pstmt.setString(5, description);
 			bool = pstmt.executeUpdate() == 0 ? false : true;
 			rsKey = pstmt.getGeneratedKeys();
 			rsKey.next();
@@ -75,6 +76,7 @@ public class PutawayServlet extends HttpServlet {
 		response.setContentType("text/html; charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
 		String uploadInfo = "";
+		String userId = (String) request.getSession().getAttribute("userID");
 		String productName = request.getParameter("productName");
 		String productClass = request.getParameter("productClass");
 		String productPrice = request.getParameter("productPrice");
@@ -83,9 +85,9 @@ public class PutawayServlet extends HttpServlet {
 		description = description.replaceAll(" ", "&nbsp;");
 		description = description.replaceAll("\n", "<br>");
 //将获取到的数据打印出来
-		System.out.println(productName + "-" + productClass + "-"
+		System.out.println("上传的商品信息：userId = " + userId + productName + "-" + productClass + "-"
 				+ productPrice + "-" + address + "-" + description);
-		if (save(productName, productClass, productPrice, address, description)) {
+		if (save(userId, productName, productClass, productPrice, address, description)) {
 			uploadInfo = "商品信息上传成功,请上传些图片";
 			//把productClass作为商品类别
 			request.getSession().setAttribute("productClass", productClass);

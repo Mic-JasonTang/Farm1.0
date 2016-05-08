@@ -21,8 +21,9 @@ public class LoginServlet extends HttpServlet {
 	private static ResultSet rs;
 
 	// 在登陆的时候验证用户名和密码是否正确
-	public static boolean validateUsernamePwd(String username, String password) {
-		boolean isTrue = false;
+	// 登录成功返回userID
+	public static String validateUsernamePwd(String username, String password) {
+		String userID = "";
 		conn = DB.getConn();
 		String sql = "select * from user where username= ? and password = ?";
 		pstmt = DB.createPstmt(conn, sql);
@@ -31,9 +32,9 @@ public class LoginServlet extends HttpServlet {
 			pstmt.setString(2, password);
 			rs = pstmt.executeQuery();
 			if (rs.next()) {
+				userID = String.valueOf(rs.getInt("id"));
 				System.out.println("验证成功：在数据库中查询到的用户名：" + rs.getString("username"));
 				System.out.println("验证成功：在数据库中查询到的密码：" + rs.getString("password"));
-				isTrue = true;
 			}
 		} catch (SQLException e) {
 			System.out.println("用户名:" + username + "---密码:" + password
@@ -44,7 +45,7 @@ public class LoginServlet extends HttpServlet {
 			DB.close(pstmt);
 			DB.close(conn);
 		}
-		return isTrue;
+		return userID;
 	}
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -61,13 +62,16 @@ public class LoginServlet extends HttpServlet {
 		String password = request.getParameter("password");
 		System.out.println("username = " + username + "    password = "
 				+ password);
-		if(validateUsernamePwd(username, password)) {
+		String userID = validateUsernamePwd(username, password); //登录成功返回一个userID，否则返回空串
+		System.out.println("LoginServlet —————> userID = " + userID);
+		if(userID != "") {
+			request.getSession().setAttribute("userID", userID);
 			request.getSession().setAttribute("username", username);
 			request.getSession().removeAttribute("loginInfo");
-			response.sendRedirect("/Farm1.0/index.jsp");
+			response.sendRedirect(request.getContextPath() + "/index.jsp");
 		} else {
 			request.getSession().setAttribute("loginInfo", "用户名或密码错误");
-			response.sendRedirect("/Farm1.0/login.jsp");
+			response.sendRedirect(request.getContextPath() + "/login.jsp");
 		}
 	}
 

@@ -3,6 +3,7 @@ encoding//WebRoot/js/remark.js=UTF-8
 encoding//WebRoot/js/zxxFile.js=UTF-8
 encoding//WebRoot/register.jsp=UTF-8
 encoding//src/com/Jason/DAO/DB.java=UTF-8
+encoding//src/com/Jason/Filter/UsernameCheckFilter.java=UTF-8
 encoding//src/com/Jason/User/Servlet/LoginServlet.java=UTF-8
 encoding//src/com/Jason/User/Servlet/RegisterServlet.java=UTF-8
 encoding//src/com/Jason/User/Servlet/UpdateServlet.java=UTF-8

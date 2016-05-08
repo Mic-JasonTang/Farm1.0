@@ -107,6 +107,10 @@ System.out.println("productId:" + productId);
 						saveSuccessInfo = "照片信息存储成功";
 						System.out.println(saveSuccessInfo);
 						session.setAttribute("saveSuccessInfo", saveSuccessInfo);
+						//将这2个信息放入session中，在跳转回本页面之后自动跳转到商品页面。
+						//这2个信息将作为属性被展示商品页面获取到
+						session.setAttribute("productId", productId);
+						session.setAttribute("productClass", productClass);
 					} else {
 						saveFailInfo = "照片信息存储失败";
 						session.setAttribute("saveFailInfo", saveFailInfo);
@@ -117,9 +121,8 @@ System.out.println("productId:" + productId);
 			System.out.println("照片上传-----> 文件已经处理完毕，但是上传时出现未知错误");
 			e.printStackTrace();
 		}
-
-		response.sendRedirect("/Farm1.0/sellerCenterUploadPhotoes.jsp");
-//		response.sendRedirect(request.getContextPath() + "/servlet/ShowAllFilesServlet");
+		System.out.println("request.getContextPath()的值是" + request.getContextPath());
+		response.sendRedirect(request.getContextPath() + "/sellerCenterUploadPhotoes.jsp");
 	}
 
 	private void processUploadfile(FileItem fileItem) {
