@@ -25,6 +25,11 @@
     <servlet-name>PutawayServlet</servlet-name>
     <servlet-class>com.Jason.SellerCenterPutaway.PutawayServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>GetProductInfoServlet</servlet-name>
+    <servlet-class>com.Jason.ProductInfo.Servlet.GetProductInfoServlet</servlet-class>
+  </servlet>
+
   
   <servlet-mapping>
     <servlet-name>UploadPhotoServlet</servlet-name>
@@ -49,6 +54,10 @@
   <servlet-mapping>
     <servlet-name>UpdateServlet</servlet-name>
     <url-pattern>/servlet/UpdateServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GetProductInfoServlet</servlet-name>
+    <url-pattern>/servlet/GetProductInfoServlet</url-pattern>
   </servlet-mapping>
   
   <welcome-file-list>

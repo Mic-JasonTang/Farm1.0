@@ -33,7 +33,7 @@ public class PutawayServlet extends HttpServlet {
 
 	// 把商品信息放入数据库
 	public boolean save(String productName, String productClass,
-			String address, String productPrice, String description) {
+			 String productPrice, String address, String description) {
 		boolean bool = false;
 		conn = DB.getConn();
 		String sql = "";
