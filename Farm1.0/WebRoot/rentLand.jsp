@@ -41,6 +41,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
              time = setTimeout("showimg(" + index + ")", 3000);
          }
     </script>
+    <script type="text/css">
+		.table{border:solid 1px #add9c0;}
+	</script>
 </head>
 <body>
 
@@ -76,9 +79,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       </li>
       </ul>
 </div>
-<table width="100%" border="0">
+<table width="100%" border="0" style="padding-left:3%;">
   <tr>
-    <td><img src="img/0.png" width="217" height="112"></td>
+    <td style="padding-left:3%;"><img src="img/0.png" width="217" height="112"></td>
     <td><form action="" method="get">
    <li class="kuan">
     <input name="" type="text" name ="search" placeholder="请输入搜索内容" autocomplete="off"style="width:450px; height:38px; background:url(img/kuang.jpg) no-repeat; border:none;"/>
@@ -91,9 +94,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <tr>
     <td colspan="2">
    <div class="hTitle">
-<div class="first_en fAr"><span class="big_en f32"><a href="#" Layout="None">RENT LAND</a></span><span class="f18"><a href="#"></a></span>
+<div class="first_en fAr"style="padding-left:3%;"><span class="big_en f32"><a href="#" Layout="None">RENT LAND</a></span><span class="f18"><a href="#"></a></span>
 </div>
-<div class="first_china f25">
+<div class="first_china f25"style="padding-left:3%;">
 <a href="#" Layout="None" style="color:#6f6f6f;">认领土地</a>
 <a class="f18" href="#" style="padding-left:5%;;">按距离</a>
 <span class="f18">|</span>
@@ -105,12 +108,36 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </tr>
 </table>
 	<div id="menu" style="padding-top:5%;">
-		<table>
+		<table align="center" >
 		<tr>
-			<td>
+			<c:forEach begin="1" end="4" >
+			<td width = "20%">
 				 <ul style="padding-left:5%;">
 		            <li><a href="product_detail.jsp"><img src="img/17.jpg" width="314" height="220" /></a>
-		            <p style="color:green"><img src="product_ico/tuijian.gif">
+		            <p id="title" style="color:green">
+		            <img src="product_ico/tuijian.gif">
+		                              【爆款】肥沃的土地</p>
+		            <p id="price" style="color:#FF3300;font-size:20px;"> ¥1800.00~¥8100.00</p>           
+		            <p id="description">北方富锌山壤主营当季蔬果</p>
+		            <p id="description">高山地果品，包肥料、种子等费用</p>
+		            <p id="description">可本地代销，诚信经营</p>
+		            <p id="description">20平方米1800元/年</p>
+		            <p id="description">40平方米3600元/年</p>
+		            <p id="description">60平方米5400元/年</p>
+		            <p id="contect">联系：<img src="img/001.png" width="80" height="30" /> </p>      
+		            </li>
+		        </ul>
+			</td>
+			</c:forEach>
+		</tr>
+		<tr>
+		</tr>
+		<tr>
+		<c:forEach begin="1" end="4" >
+			<td width = "20%">
+				 <ul style="padding-left:5%;">
+		            <li><a href="product_detail.jsp"><img src="img/17.jpg" width="314" height="220" /></a>
+		            <p name="title" style="color:green"><img src="product_ico/tuijian.gif">
 		                              【爆款】肥沃的土地</p>
 		            <p style="color:#FF3300;font-size:20px;"> ¥1800.00~¥8100.00</p>           
 		            <p>北方富锌山壤主营当季蔬果</p>
@@ -123,6 +150,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		            </li>
 		        </ul>
 			</td>
+			</c:forEach>
 		</tr>
 		</table>
        

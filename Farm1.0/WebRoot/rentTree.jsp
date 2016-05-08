@@ -76,22 +76,31 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       </li>
       </ul>
 </div>
-<table width="100%" border="0">
+<table width="100%" border="0" style="padding-left:3%;">
   <tr>
-    <td><img src="img/0.png" width="217" height="112"></td>
+    <td style="padding-left:3%;"><img src="img/0.png" width="217" height="112"></td>
     <td><form action="" method="get">
    <li class="kuan">
-   <input name="search" type="text" name ="search"style="width:450px; height:38px; background:url(img/kuang.jpg) no-repeat; border:none;"/>
+    <input name="" type="text" name ="search" placeholder="请输入搜索内容" autocomplete="off"style="width:450px; height:38px; background:url(img/kuang.jpg) no-repeat; border:none;"/>
    </li><!--搜索框-->
    <li class="an">
-   <input name="button" type="button" name="button" style="width:98px; height:41px; background:url(img/an.jpg) no-repeat; border:none;"/>
+   <input name="" type="button" name="button" style="width:98px; height:38px; background:url(img/an.jpg) no-repeat; border:none;"/>
    </li><!--搜索按钮-->
 </form></td>
   </tr>
   <tr>
     <td colspan="2">
-    <div class="hTitle">
-<div class="first_en fAr"><span class="big_en f32"><a href="#" Layout="None">RENT FRUIT TREE</a></span><span class="f18"><a href="#"></a></span></div><div class="first_china f25"><a href="#" Layout="None" style="color:#6f6f6f;">认领果树</a><a class="f18" href="#" style="padding-left:5%;;">按距离</a><span class="f18">|</span><a class="f18" href="#">按人气</a></div><hr size="2" color="#6f6f6f" style="filter:alpha(opacity=10,finishopacity=100,style=1,startX=100,startY=100,finishX=0,finishY=0);width:95%;"> </div>
+   <div class="hTitle">
+<div class="first_en fAr"style="padding-left:3%;"><span class="big_en f32"><a href="#" Layout="None">RENT LAND</a></span><span class="f18"><a href="#"></a></span>
+</div>
+<div class="first_china f25"style="padding-left:3%;">
+<a href="#" Layout="None" style="color:#6f6f6f;">认领土地</a>
+<a class="f18" href="#" style="padding-left:5%;;">按距离</a>
+<span class="f18">|</span>
+<a class="f18" href="#">按人气</a>
+</div>
+<hr size="2" color="#6f6f6f" style="filter:alpha(opacity=10,finishopacity=100,style=1,startX=100,startY=100,finishX=0,finishY=0);width:95%;"> 
+</div>
     </td>
   </tr>
 </table>
