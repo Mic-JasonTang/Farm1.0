@@ -5,7 +5,7 @@ public class Images {
 	private String productClass = "";
 	private String guidFileName = "";
 	private String realFileName = "";
-	private String storeDir = "";
+	private String relativePath = "";
 	private String date  = "";
 	
 	public Images(String productId, String productClass, String guidFileName,
@@ -14,7 +14,7 @@ public class Images {
 		this.productClass = productClass;
 		this.guidFileName = guidFileName;
 		this.realFileName = realFileName;
-		this.storeDir = storeDir;
+		this.relativePath = storeDir;
 		this.date = date;
 	}
 	
@@ -45,11 +45,11 @@ public class Images {
 	public void setRealFileName(String realFileName) {
 		this.realFileName = realFileName;
 	}
-	public String getStoreDir() {
-		return storeDir;
+	public String getRelativePath() {
+		return relativePath;
 	}
-	public void setStoreDir(String storeDir) {
-		this.storeDir = storeDir;
+	public void setRelativePath(String relativePath) {
+		this.relativePath = relativePath;
 	}
 	public String getDate() {
 		return date;
