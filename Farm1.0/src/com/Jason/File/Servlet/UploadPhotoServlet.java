@@ -120,7 +120,7 @@ public class UploadPhotoServlet extends HttpServlet {
 						session.setAttribute("productClass", productClass);
 						// 跳转到获取信息页面。
 						response.sendRedirect(request.getContextPath()
-								+ "/servlet/GetProductInfoServlet");
+								+ "/servlet/GetImageInfoServlet");
 					} else {
 						saveFailInfo = "照片信息存储失败";
 						session.setAttribute("saveFailInfo", saveFailInfo);

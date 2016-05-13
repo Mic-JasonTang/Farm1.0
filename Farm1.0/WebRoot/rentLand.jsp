@@ -5,7 +5,7 @@
 <%
 	List<Images> images = (List<Images>)session.getAttribute("images");
 	if(images == null || images.size() == 0) {
-		response.sendRedirect(request.getContextPath() + "/servlet/GetProductInfoServlet");
+		response.sendRedirect(request.getContextPath() + "/servlet/GetImageInfoServlet");
 	} else {
 		System.out.println("else中数组的大小为:" + images.size());
 	}
@@ -109,17 +109,19 @@
 		</tr>
 	</table>
 	<div id="menu" style="padding-top:5%;">
-		<table align="center">
+		<table style="padding-left:10%;">
 			<!-- 		循环输出商品信息 -->
 			<c:forEach var="i" begin="1" end="${sessionScope.images.size()}">
 				<c:if test="${(i-1) % 4 == 0}">
 					<tr>
+					<tr>
+					<tr>
 				</c:if>
 					<td width="20%">
-				        <c:out value="${i }" />
+<!-- 				        <c:out value="${i }" /> -->
 						<ul style="padding-left:5%;">
 							<li><a href="product_detail.jsp"><img src="${sessionScope.images.get(i-1).relativePath}"
-									width="314" height="220" /></a>
+									style="width: 300px; height: 220px;" /></a>
 								<p id="title" style="color:green">
 									<img src="product_ico/tuijian.gif"> 【爆款】肥沃的土地
 								</p>

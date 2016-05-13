@@ -18,7 +18,7 @@ import javax.servlet.http.HttpSession;
 
 import com.Jason.DAO.DB;
 
-public class GetProductInfoServlet extends HttpServlet {
+public class GetImageInfoServlet extends HttpServlet {
 	private Connection conn;
 	private PreparedStatement pstmt;
 	private Statement stmt;
@@ -44,7 +44,7 @@ public class GetProductInfoServlet extends HttpServlet {
 				image = new Images(productId, productClass, guidFileName,
 						realFileName, relativePath, date);
 //将获取到的信息进行打印输出。
-System.out.println("从数据库获取的照片信息如下：guidFileName = " + guidFileName + "\n realFileName = " + realFileName + "\n relativePath = " + relativePath);
+System.out.println("从数据库获取的照片信息如下：\n guidFileName = " + guidFileName + "\n realFileName = " + realFileName + "\n relativePath = " + relativePath);
 			}
 		} catch (SQLException e) {
 			System.out.println("获取商品照片信息时 -----> 设置预处理语句出错");
@@ -75,7 +75,7 @@ System.out.println("从数据库获取的照片信息如下：guidFileName = " + guidFileName 
 						realFileName, relativePath, date);
 				images.add(image);
 //将获取到的信息进行打印输出。
-System.out.println("从数据库获取的照片信息如下：guidFileName = " + guidFileName + "\n realFileName = " + realFileName + "\n relativePath = " + relativePath);
+System.out.println("从数据库获取所有的照片信息如下：\n guidFileName = " + guidFileName + "\n realFileName = " + realFileName + "\n relativePath = " + relativePath);
 			}
 		} catch (SQLException e) {
 			System.out.println("获取所有商品照片信息时 -----> 设置预处理语句出错");
@@ -110,7 +110,6 @@ System.out.println("从数据库获取的照片信息如下：guidFileName = " + guidFileName 
 		}
 		session.setAttribute("images", images);
 		response.sendRedirect(request.getContextPath() + "/rentLand.jsp");
-		
 	}
 
 }
