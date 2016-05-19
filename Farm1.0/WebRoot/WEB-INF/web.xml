@@ -29,6 +29,11 @@
     <servlet-name>GetImageInfoServlet</servlet-name>
     <servlet-class>com.Jason.ProductInfo.Servlet.GetImageInfoServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>GetLandInfoServlet</servlet-name>
+    <servlet-class>com.Jason.ProductInfo.Servlet.GetLandInfoServlet</servlet-class>
+  </servlet>
+
 
   
   <servlet-mapping>
@@ -58,6 +63,10 @@
   <servlet-mapping>
     <servlet-name>GetImageInfoServlet</servlet-name>
     <url-pattern>/servlet/GetImageInfoServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GetLandInfoServlet</servlet-name>
+    <url-pattern>/servlet/GetLandInfoServlet</url-pattern>
   </servlet-mapping>
   
   <welcome-file-list>

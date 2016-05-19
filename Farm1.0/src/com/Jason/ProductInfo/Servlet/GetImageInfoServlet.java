@@ -109,7 +109,7 @@ System.out.println("从数据库获取所有的照片信息如下：\n guidFileName = " + guidFi
 			getAllImageInfo();
 		}
 		session.setAttribute("images", images);
-		response.sendRedirect(request.getContextPath() + "/rentLand.jsp");
+		response.sendRedirect(request.getContextPath() + "/servlet/GetLandInfoServlet");
 	}
 
 }

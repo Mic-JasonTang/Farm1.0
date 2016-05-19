@@ -3,12 +3,21 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%
+	session.removeAttribute("productId"); //移出这个属性。
+	session.removeAttribute("productClass"); //这2个属性是为了让GetImageInfoServlet来判断是否有数据被添加的
 	List<Images> images = (List<Images>)session.getAttribute("images");
+	List<Land> lands = (List<Land>)session.getAttribute("lands");
 	if(images == null || images.size() == 0) {
 		response.sendRedirect(request.getContextPath() + "/servlet/GetImageInfoServlet");
 	} else {
-		System.out.println("else中数组的大小为:" + images.size());
+		if(lands == null || lands.size() == 0) {
+			response.sendRedirect(request.getContextPath() + "/servlet/GetLandInfoServlet");
+		} else {
+			System.out.println("lands中数组的大小为:" + lands.size());
+		}
+		System.out.println("images中数组的大小为:" + images.size());
 	}
+	
 %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
@@ -111,7 +120,7 @@
 	<div id="menu" style="padding-top:5%;">
 		<table style="padding-left:10%;">
 			<!-- 		循环输出商品信息 -->
-			<c:forEach var="i" begin="1" end="${sessionScope.images.size()}">
+			<c:forEach var="i" begin="1" end="${sessionScope.lands.size()}">
 				<c:if test="${(i-1) % 4 == 0}">
 					<tr>
 					<tr>
@@ -123,18 +132,15 @@
 							<li><a href="product_detail.jsp"><img src="${sessionScope.images.get(i-1).relativePath}"
 									style="width: 300px; height: 220px;" /></a>
 								<p id="title" style="color:green">
-									<img src="product_ico/tuijian.gif"> 【爆款】肥沃的土地
+									<img src="product_ico/tuijian.gif"> ${sessionScope.lands.get(i-1).productName}
 								</p>
 								<p id="price" style="color:#FF3300;font-size:20px;">
-									¥1800.00~¥8100.00</p>
-								<p id="description">北方富锌山壤主营当季蔬果</p>
-								<p id="description">高山地果品，包肥料、种子等费用</p>
-								<p id="description">可本地代销，诚信经营</p>
-								<p id="description">20平方米1800元/年</p>
-								<p id="description">40平方米3600元/年</p>
-								<p id="description">60平方米5400元/年</p>
+									¥&nbsp;&nbsp;${sessionScope.lands.get(i-1).price}</p>
+								<p id="description"><strong style="color:#7744A8">一句话描述：</strong><br><br>${sessionScope.lands.get(i-1).description}</p>
+								<p id="description"><span style="color:#77CCFF">所在地：</span>${sessionScope.lands.get(i-1).address}</p>
+								<p id="description"><span style="color:#77CCFF">发布日期：</span>${sessionScope.lands.get(i-1).date}</p>
 								<p id="contect">
-									联系：<img src="img/001.png" width="80" height="30" />
+									<img src="img/001.png" width="80" height="30" />
 								</p></li>
 						</ul>
 					</td>
