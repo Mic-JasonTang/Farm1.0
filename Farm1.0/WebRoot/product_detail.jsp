@@ -13,8 +13,8 @@
 <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
 <link rel="stylesheet" href="css/jquery-labelauty.css">
 <!-- 商家信息css -->
-<link rel="stylesheet" type="text/css" href="css/styles.css" media="all" />
-<link rel="stylesheet" type="text/css" href="css/demo.css" media="all" />
+<link rel="stylesheet" type="text/css" href="css/info_styles.css" media="all" />
+<link rel="stylesheet" type="text/css" href="css/info_demo.css" media="all" />
 <!-- 按钮css -->
 <link href="css/button.css" rel="stylesheet" type="text/css" />
 <!-- a标签css -->
