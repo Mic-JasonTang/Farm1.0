@@ -2,6 +2,7 @@
 	import="java.util.*,com.Jason.ProductInfo.Servlet.*"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="string" uri="http://sunshinedrak.com/StringFunctions" %>
 <%
 	session.removeAttribute("productId"); //移出这个属性。
 	session.removeAttribute("productClass"); //这2个属性是为了让GetImageInfoServlet来判断是否有数据被添加的
@@ -11,13 +12,12 @@
 		response.sendRedirect(request.getContextPath() + "/servlet/GetImageInfoServlet");
 	} else {
 		if(lands == null || lands.size() == 0) {
-			response.sendRedirect(request.getContextPath() + "/servlet/GetLandInfoServlet");
+	response.sendRedirect(request.getContextPath() + "/servlet/GetLandInfoServlet");
 		} else {
-			System.out.println("lands中数组的大小为:" + lands.size());
+	System.out.println("lands中数组的大小为:" + lands.size());
 		}
 		System.out.println("images中数组的大小为:" + images.size());
 	}
-	
 %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
@@ -29,30 +29,37 @@
 <link rel="shortcut icon" href="ico/mogu.ico" type="image/x-icon" />
 <script src="js/jquery-1.8.3.min.js"></script>
 <script type="text/javascript">
-         var time = "";
-         var index = 1;
-         $(function () {
-             showimg(index);
-             //鼠标移入移出
-             $(".imgnum span").hover(function () {
-                clearTimeout(time);
-                var icon=$(this).text();
-                $(".imgnum span").removeClass("onselect").eq(icon-1).addClass("onselect");
-                $("#banner_img li").hide().stop(true,true).eq(icon-1).fadeIn("slow");
-             }, function () {
-                index=$(this).text()> 2 ? 1 :parseInt($(this).text())+1;
-                time = setTimeout("showimg(" + index + ")", 3000);
-             });
-         });
- 
-         function showimg(num) {
-             index = num;
-             $(".imgnum span").removeClass("onselect").eq(index-1).addClass("onselect");
-             $("#banner_img li").hide().stop(true,true).eq(index-1).fadeIn("slow");
-             index = index + 1 > 3 ? 1 : index + 1;
-             time = setTimeout("showimg(" + index + ")", 3000);
-         }
-    </script>
+	var time = "";
+	var index = 1;
+	$(function() {
+		showimg(index);
+		//鼠标移入移出
+		$(".imgnum span").hover(
+				function() {
+					clearTimeout(time);
+					var icon = $(this).text();
+					$(".imgnum span").removeClass("onselect").eq(icon - 1)
+							.addClass("onselect");
+					$("#banner_img li").hide().stop(true, true).eq(icon - 1)
+							.fadeIn("slow");
+				},
+				function() {
+					index = $(this).text() > 2 ? 1
+							: parseInt($(this).text()) + 1;
+					time = setTimeout("showimg(" + index + ")", 3000);
+				});
+	});
+
+	function showimg(num) {
+		index = num;
+		$(".imgnum span").removeClass("onselect").eq(index - 1).addClass(
+				"onselect");
+		$("#banner_img li").hide().stop(true, true).eq(index - 1)
+				.fadeIn("slow");
+		index = index + 1 > 3 ? 1 : index + 1;
+		time = setTimeout("showimg(" + index + ")", 3000);
+	}
+</script>
 <script type="text/css">
 		.table{border:solid 1px #add9c0;}
 	</script>
@@ -126,25 +133,33 @@
 					<tr>
 					<tr>
 				</c:if>
-					<td width="20%">
-<!-- 				        <c:out value="${i }" /> -->
-						<ul style="padding-left:5%;">
-							<li><a href="product_detail.jsp"><img src="${sessionScope.images.get(i-1).relativePath}"
-									style="width: 300px; height: 220px;" /></a>
-								<p id="title" style="color:green">
-									<img src="product_ico/tuijian.gif"> ${sessionScope.lands.get(i-1).productName}
-								</p>
-								<p id="price" style="color:#FF3300;font-size:20px;">
-									¥&nbsp;&nbsp;${sessionScope.lands.get(i-1).price}</p>
-								<p id="description"><strong style="color:#7744A8">一句话描述：</strong><br><br>${sessionScope.lands.get(i-1).description}</p>
-								<p id="description"><span style="color:#77CCFF">所在地：</span>${sessionScope.lands.get(i-1).address}</p>
-								<p id="description"><span style="color:#77CCFF">发布日期：</span>${sessionScope.lands.get(i-1).date}</p>
-								<p id="contect">
-									<img src="img/001.png" width="80" height="30" />
-								</p></li>
-						</ul>
-					</td>
-				
+				<td width="20%">
+					<!-- 				        <c:out value="${i }" /> -->
+					<ul style="padding-left:5%;">
+						<li><a
+							href="product_detail.jsp?productId=${sessionScope.lands.get(i-1).productId}&imageId=${sessionScope.images.get(i-1).id}&userId=${sessionScope.lands.get(i-1).userId}"><img
+								src="${sessionScope.images.get(i-1).relativePath}"
+								style="width: 300px; height: 220px;" /></a>
+							<p id="title" style="color:green">
+								<img src="product_ico/tuijian.gif">
+								${sessionScope.lands.get(i-1).productName}
+							</p>
+							<p id="price" style="color:#FF3300;font-size:20px;">
+								<span style="#gray">¥</span>&nbsp;&nbsp;${sessionScope.lands.get(i-1).price}
+							</p>
+							<p id="description">
+								<strong style="color:#7744A8">一句话描述：</strong><br>
+								<br>${string:stringCutOut(sessionScope.lands.get(i-1).description, 0, 10)}</p>
+							<p id="description">
+								<span style="color:#77CCFF">所在地：</span>${sessionScope.lands.get(i-1).address}</p>
+							<p id="description">
+								<span style="color:#77CCFF">发布日期：</span>${sessionScope.lands.get(i-1).date}</p>
+							<p id="contect">
+								<img src="img/001.png" width="80" height="30" />
+							</p></li>
+					</ul>
+				</td>
+
 			</c:forEach>
 		</table>
 	</div>

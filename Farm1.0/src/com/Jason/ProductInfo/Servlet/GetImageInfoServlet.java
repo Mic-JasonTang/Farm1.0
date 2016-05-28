@@ -8,6 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -37,11 +38,12 @@ public class GetImageInfoServlet extends HttpServlet {
 			pstmt.setString(2, productClass);
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
+				String id = String.valueOf(rs.getInt("id"));
 				String guidFileName = rs.getString("guidFileName");
 				String realFileName = rs.getString("realFileName");
 				String relativePath = rs.getString("relativePath");
 				String date = rs.getString("date");
-				image = new Images(productId, productClass, guidFileName,
+				image = new Images(id, productId, productClass, guidFileName,
 						realFileName, relativePath, date);
 //将获取到的信息进行打印输出。
 System.out.println("从数据库获取的照片信息如下：\n guidFileName = " + guidFileName + "\n realFileName = " + realFileName + "\n relativePath = " + relativePath);
@@ -65,13 +67,14 @@ System.out.println("从数据库获取的照片信息如下：\n guidFileName = " + guidFileNa
 		try {
 			rs = stmt.executeQuery(sql);
 			while (rs.next()) {
+				String id = String.valueOf(rs.getInt("id"));
 				String productId = rs.getString("productId");
 				String productClass = rs.getString("productClass");
 				String guidFileName = rs.getString("guidFileName");
 				String realFileName = rs.getString("realFileName");
 				String relativePath = rs.getString("relativePath");
 				String date = rs.getString("date");
-				image = new Images(productId, productClass, guidFileName,
+				image = new Images(id, productId, productClass, guidFileName,
 						realFileName, relativePath, date);
 				images.add(image);
 //将获取到的信息进行打印输出。
@@ -108,6 +111,7 @@ System.out.println("从数据库获取所有的照片信息如下：\n guidFileName = " + guidFi
 		} else {
 			getAllImageInfo();
 		}
+		Collections.reverse(images);
 		session.setAttribute("images", images);
 		response.sendRedirect(request.getContextPath() + "/servlet/GetLandInfoServlet");
 	}

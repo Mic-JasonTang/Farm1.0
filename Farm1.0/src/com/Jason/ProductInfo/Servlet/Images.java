@@ -1,6 +1,7 @@
 package com.Jason.ProductInfo.Servlet;
 
 public class Images {
+	private String id = "";
 	private String productId = "";
 	private String productClass = "";
 	private String guidFileName = "";
@@ -8,17 +9,28 @@ public class Images {
 	private String relativePath = "";
 	private String date  = "";
 	
-	public Images(String productId, String productClass, String guidFileName,
-			String realFileName, String storeDir, String date) {
+	
+	public Images(String id, String productId, String productClass,
+			String guidFileName, String realFileName, String relativePath,
+			String date) {
+		this.id = id;
 		this.productId = productId;
 		this.productClass = productClass;
 		this.guidFileName = guidFileName;
 		this.realFileName = realFileName;
-		this.relativePath = storeDir;
+		this.relativePath = relativePath;
 		this.date = date;
 	}
-	
+
 	public Images() {
+	}
+	
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	public String getProductId() {
