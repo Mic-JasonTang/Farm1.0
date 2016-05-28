@@ -6,7 +6,7 @@
 <%
 	session.removeAttribute("productId"); //移出这个属性。
 	session.removeAttribute("productClass"); //这2个属性是为了让GetImageInfoServlet来判断是否有数据被添加的
-	List<Images> images = (List<Images>)session.getAttribute("images");
+	List<Image> images = (List<Image>)session.getAttribute("images");
 	List<Land> lands = (List<Land>)session.getAttribute("lands");
 	if(images == null || images.size() == 0) {
 		response.sendRedirect(request.getContextPath() + "/servlet/GetImageInfoServlet");
@@ -136,8 +136,15 @@
 				<td width="20%">
 					<!-- 				        <c:out value="${i }" /> -->
 					<ul style="padding-left:5%;">
-						<li><a
-							href="product_detail.jsp?productId=${sessionScope.lands.get(i-1).productId}&imageId=${sessionScope.images.get(i-1).id}&userId=${sessionScope.lands.get(i-1).userId}"><img
+						<li>
+						    <c:url var="url" value="/servlet/getProductDetailServlet">
+						    	<c:param name="productId" value="${sessionScope.lands.get(i-1).productId}"></c:param>
+						    	<c:param name="imageId" value="${sessionScope.images.get(i-1).id}"></c:param>
+						    	<c:param name="userId" value="${sessionScope.lands.get(i-1).userId}"></c:param>
+						    	<c:param name="imagePath" value="${sessionScope.images.get(i-1).relativePath}"></c:param>
+						    </c:url>
+						    <a
+							href="<c:out value='${url }'/>"><img
 								src="${sessionScope.images.get(i-1).relativePath}"
 								style="width: 300px; height: 220px;" /></a>
 							<p id="title" style="color:green">

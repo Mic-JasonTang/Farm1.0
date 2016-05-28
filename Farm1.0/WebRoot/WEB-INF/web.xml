@@ -33,6 +33,11 @@
     <servlet-name>GetLandInfoServlet</servlet-name>
     <servlet-class>com.Jason.ProductInfo.Servlet.GetLandInfoServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>getProductDetailServlet</servlet-name>
+    <servlet-class>com.Jason.ProductInfo.Servlet.getProductDetailServlet</servlet-class>
+  </servlet>
+
 
 
   
@@ -67,6 +72,10 @@
   <servlet-mapping>
     <servlet-name>GetLandInfoServlet</servlet-name>
     <url-pattern>/servlet/GetLandInfoServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>getProductDetailServlet</servlet-name>
+    <url-pattern>/servlet/getProductDetailServlet</url-pattern>
   </servlet-mapping>
   
   <welcome-file-list>

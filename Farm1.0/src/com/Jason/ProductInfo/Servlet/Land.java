@@ -72,5 +72,13 @@ public class Land {
 	public void setDate(String date) {
 		this.date = date;
 	}
+
+	@Override
+	public String toString() {
+		return "Land [productId=" + productId + ", userId=" + userId
+				+ ", productName=" + productName + ", price=" + price
+				+ ", address=" + address + ", description=" + description
+				+ ", date=" + date + "]";
+	}
 	
 }	

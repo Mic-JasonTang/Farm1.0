@@ -24,12 +24,12 @@ public class GetImageInfoServlet extends HttpServlet {
 	private PreparedStatement pstmt;
 	private Statement stmt;
 	private ResultSet rs;
-	private List<Images> images = new ArrayList<Images>();
+	private List<Image> images = new ArrayList<Image>();
 	
 	// 从数据库中查询出对应的照片信息和描述信息
 	// 根据商品id和商品类型
-	public Images getImageInfo(String productId, String productClass) {
-		Images image = null;
+	public Image getImageInfo(String productId, String productClass) {
+		Image image = null;
 		conn = DB.getConn();
 		String sql = "select * from images where productId = ? and productClass = ?";
 		pstmt = DB.createPstmt(conn, sql);
@@ -43,10 +43,10 @@ public class GetImageInfoServlet extends HttpServlet {
 				String realFileName = rs.getString("realFileName");
 				String relativePath = rs.getString("relativePath");
 				String date = rs.getString("date");
-				image = new Images(id, productId, productClass, guidFileName,
+				image = new Image(id, productId, productClass, guidFileName,
 						realFileName, relativePath, date);
 //将获取到的信息进行打印输出。
-System.out.println("从数据库获取的照片信息如下：\n guidFileName = " + guidFileName + "\n realFileName = " + realFileName + "\n relativePath = " + relativePath);
+//System.out.println("从数据库获取的照片信息如下：\n guidFileName = " + guidFileName + "\n realFileName = " + realFileName + "\n relativePath = " + relativePath);
 			}
 		} catch (SQLException e) {
 			System.out.println("获取商品照片信息时 -----> 设置预处理语句出错");
@@ -59,8 +59,8 @@ System.out.println("从数据库获取的照片信息如下：\n guidFileName = " + guidFileNa
 		return image;
 	}
 	//获得所有的图片信息
-	public Images getAllImageInfo() {
-		Images image = null;
+	public Image getAllImageInfo() {
+		Image image = null;
 		conn = DB.getConn();
 		String sql = "select * from images";
 		stmt = DB.createStmt(conn);
@@ -74,11 +74,11 @@ System.out.println("从数据库获取的照片信息如下：\n guidFileName = " + guidFileNa
 				String realFileName = rs.getString("realFileName");
 				String relativePath = rs.getString("relativePath");
 				String date = rs.getString("date");
-				image = new Images(id, productId, productClass, guidFileName,
+				image = new Image(id, productId, productClass, guidFileName,
 						realFileName, relativePath, date);
 				images.add(image);
 //将获取到的信息进行打印输出。
-System.out.println("从数据库获取所有的照片信息如下：\n guidFileName = " + guidFileName + "\n realFileName = " + realFileName + "\n relativePath = " + relativePath);
+//System.out.println("从数据库获取所有的照片信息如下：\n guidFileName = " + guidFileName + "\n realFileName = " + realFileName + "\n relativePath = " + relativePath);
 			}
 		} catch (SQLException e) {
 			System.out.println("获取所有商品照片信息时 -----> 设置预处理语句出错");
@@ -103,8 +103,8 @@ System.out.println("从数据库获取所有的照片信息如下：\n guidFileName = " + guidFi
 		HttpSession session = request.getSession();
 		String productId = (String) session.getAttribute("productId");
 		String productClass = (String) session.getAttribute("productClass");
-		System.out.println("GetProductInfoServlet --- > 获取到的信息有 " + productId + "----> " + productClass);
-		Images image = null;
+//		System.out.println("GetProductInfoServlet --- > 获取到的信息有 " + productId + "----> " + productClass);
+		Image image = null;
 		if(productId != null || productClass != null) {
 			image = getImageInfo(productId, productClass);
 			images.add(image);

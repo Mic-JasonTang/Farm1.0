@@ -1,10 +1,7 @@
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ page language="java"
+	import="java.util.*,com.Jason.ProductInfo.Servlet.*"
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%
-String path = request.getContextPath();
-String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-%>
-
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html lang="zh-CN">
 <head>
@@ -15,6 +12,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <link rel="stylesheet" href="css/type.css" type="text/css">
 <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
 <link rel="stylesheet" href="css/jquery-labelauty.css">
+<!-- 商家信息css -->
+<link rel="stylesheet" type="text/css" href="css/styles.css" media="all" />
+<link rel="stylesheet" type="text/css" href="css/demo.css" media="all" />
+<!-- 按钮css -->
+<link href="css/button.css" rel="stylesheet" type="text/css" />
+<!-- a标签css -->
+<link rel="stylesheet" href="css/a_style.css">
 <style>
 body {
 	background: white;
@@ -107,9 +111,6 @@ input.labelauty+label {
 			<div class="col-xs-12">
 				<div class="hTitle">
 					<div class="first_en fAr">
-						<!-- 					<span class="big_en f32"> -->
-						<!-- 						<a href="#" Layout="None">DESCRIPTION</a> -->
-						<!-- 					</span> -->
 						<span class="f18"> <a href="#"></a>
 						</span>
 					</div>
@@ -121,56 +122,77 @@ input.labelauty+label {
 				</div>
 			</div>
 			<div class="col-xs-3">
-				<img src="img/17.jpg" width="314" height="206">
+				<!-- 图片地址 -->
+				<img src="${sessionScope.image.relativePath}"
+					style="width: 300px; height: 220px;">
 			</div>
 			<div class="col-xs-5">
-				<div class="biaoti">这是标题，这是标题，这是标题，这是标题,这是标题，这是标题，这是标题，这是标题</div>
-				<div class="jiage">
-					<p class="biaoti">价格</p>
-					<p class="price">¥1800.00</p>
+				<!-- 标题 -->
+				<div class="biaoti">
+					<ul class="tags">
+				      <li><a >${land.productName}<span>${land.productId }</span></a></li>
+				    </ul>
 				</div>
-				<div class="zhonglei">
-					<ul class="dowebok check">
-						<li>种植种类:&nbsp;&nbsp;&nbsp;</li>
-						<li><input type="checkbox" name="radio" data-labelauty="小白菜"
-							style="color:#000"></li>
-						<li>&nbsp;&nbsp;&nbsp;</li>
-						<li><input type="checkbox" name="radio" data-labelauty="甘蓝"></li>
-						<li>&nbsp;&nbsp;&nbsp;</li>
-						<li><input type="checkbox" name="radio" data-labelauty="西红柿"></li>
-						<li>&nbsp;&nbsp;&nbsp;</li>
-						<li><input type="checkbox" name="radio" data-labelauty="花椰菜"></li>
-					</ul>
-				</div>
-				<div class="nianxian">
-					<ul class="dowebok check">
-						<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;年限:&nbsp;&nbsp;&nbsp;</li>
-						<li><input type="radio" name="radio" data-labelauty="半年"
-							style="color:#000"></li>
-						<li>&nbsp;&nbsp;&nbsp;</li>
-						<li><input type="radio" name="radio" data-labelauty="一年"></li>
-						<li>&nbsp;&nbsp;&nbsp;</li>
-						<li><input type="radio" name="radio" data-labelauty="一年半"></li>
-						<li>&nbsp;&nbsp;&nbsp;</li>
-						<li><input type="radio" name="radio" data-labelauty="两年"></li>
-					</ul>
-				</div>
-				<div>
-					<a href="#"><img src="img/add.png" width="162" height="33"></a>
-				</div>
+				<br>
+				<!-- 价格 -->
+				<input class="btn24" type="button"
+					onmouseout="this.style.backgroundPosition='left top'"
+					onmouseover="this.style.backgroundPosition='left -50px'"
+					value="${land.price }" style="background-position: left top;">
+				<br>
+				<form action="" method="post">
+					<div class="zhonglei">
+						<ul class="dowebok check">
+							<li>种植种类:&nbsp;&nbsp;&nbsp;</li>
+							<li><input type="checkbox" name="radio" data-labelauty="小白菜"
+								style="color:#000"></li>
+							<li>&nbsp;&nbsp;&nbsp;</li>
+							<li><input type="checkbox" name="radio" data-labelauty="甘蓝"></li>
+							<li>&nbsp;&nbsp;&nbsp;</li>
+							<li><input type="checkbox" name="radio" data-labelauty="西红柿"></li>
+							<li>&nbsp;&nbsp;&nbsp;</li>
+							<li><input type="checkbox" name="radio" data-labelauty="花椰菜"></li>
+						</ul>
+					</div>
+					<div class="nianxian">
+						<ul class="dowebok check">
+							<li>种植年限:&nbsp;&nbsp;&nbsp;</li>
+							<li><input type="radio" name="radio" data-labelauty="半年"
+								style="color:#000"></li>
+							<li>&nbsp;&nbsp;&nbsp;</li>
+							<li><input type="radio" name="radio" data-labelauty="一年"></li>
+							<li>&nbsp;&nbsp;&nbsp;</li>
+							<li><input type="radio" name="radio" data-labelauty="一年半"></li>
+							<li>&nbsp;&nbsp;&nbsp;</li>
+							<li><input type="radio" name="radio" data-labelauty="两年"></li>
+						</ul>
+					</div>
+					<div style="padding-left:16%">
+						<input type="button" value="立即购买" class="btn27">
+					</div>
+				</form>
 			</div>
-			<div class="col-xs-4">
-				<div class="price text-center jiage">商品评价</div>
-				<div>
-					好啊好啊好啊好啊好啊好啊好啊好啊好啊好啊好啊好啊好啊好啊好啊好啊好啊好啊好啊好啊好啊好啊好啊好啊好啊好啊好啊好啊好啊好啊好啊好啊好啊好啊好啊好啊好啊好啊好啊好啊好啊好啊好啊好啊好啊好啊好啊好啊好啊好啊好啊好啊好啊好啊好啊好啊好啊好啊好啊好啊好啊好啊好啊好啊好啊好啊好啊好啊好啊好啊好啊好啊好啊好啊好啊好啊好啊好啊
+			<div class="col-xs-4" style="padding-left:10%">
+				<div id="fdw-pricing-table">
+					<div class="plan plan2 popular-plan">
+						<div class="header">商家信息</div>
+						<div class="monthly">${user.username}的小店</div>
+						<ul>
+							<li><b>联系方式</b>${user.phone }</li>
+							<li><b>email</b>
+							<p>${user.email }</p></li>
+							<li><b>地址</b>
+							<p>${user.address }</p></li>
+							<li><b>注册日期</b>
+							<p>${user.date }</p></li>
+						</ul>
+						<span class="signup">权威认证</span>
+					</div>
 				</div>
 			</div>
 		</div>
 		<div class="hTitle">
 			<div class="first_en fAr">
-				<!-- 					<span class="big_en f32"> -->
-				<!-- 						<a href="#" Layout="None">DESCRIPTION</a> -->
-				<!-- 					</span> -->
 				<span class="f18"> <a href="#"></a>
 				</span>
 			</div>
@@ -180,16 +202,11 @@ input.labelauty+label {
 			<hr size="2" color="#6f6f6f"
 				style="filter:alpha(opacity=10,finishopacity=100,style=1,startX=100,startY=100,finishX=0,finishY=0);width:95%;">
 		</div>
-		<div class="col-xs-12">
-			描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述
-		</div>
+		<div class="col-xs-12">${land.description}</div>
 	</div>
 
-	
 	<script src="js/jquery-1.8.3.min.js"></script>
 	<script src="js/jquery-labelauty.js"></script>
-	<script type="text/javascript" src="js/login.js"></script>
-	<script type="text/javascript" src="js/reg.js"></script>
 	<script type="text/javascript">
 var time = "";
 var index = 1;
