@@ -9,7 +9,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <title>开心农场——注册</title>
-<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/login_style.css" />
 <!-- 网站图标 -->
 <link rel="shortcut icon" href="ico/mogu.ico" type="image/x-icon" />
 <!-- 美化对话框 -->

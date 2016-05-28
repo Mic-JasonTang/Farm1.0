@@ -17,7 +17,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <link rel="stylesheet" type="text/css" href="./css/sweet-alert.css">
 <!-- 网站图标 -->
 <link rel="shortcut icon" href="ico/mogu.ico" type="image/x-icon" />
-<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/login_style.css" />
 <script type="text/javascript" src="./js/getHttpRequest.js"></script>    
 	<script type="text/javascript">
 		window.onload=function(){
