@@ -63,17 +63,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <li class="list">
         <a class="tx" href="#">首页</a>
         <span>|</span>      
-        <a class="tx" href="rentLand.jsp" target="_black">认领土地</a>
+        <a class="tx" href="rentLand.jsp" target="_blank">认领土地</a>
         <span>|</span>
-        <a class="tx" href="rentTree.jsp" target="_black">认领果树</a>
+        <a class="tx" href="rentTree.jsp" target="_blank">认领果树</a>
         <span>|</span>
-        <a class="tx" href="purchase.jsp" target="_black">开心购买</a>
+        <a class="tx" href="purchase.jsp" target="_blank">开心购买</a>
         <span>|</span>
-        <a class="tx" href="experience.jsp" target="_black">开心体验</a>
+        <a class="tx" href="experience.jsp" target="_blank">开心体验</a>
         <span>|</span>
-        <a class="tx" href="myFarm.jsp" target="_black">我的农场</a>
+        <a class="tx" href="myFarm.jsp" target="_blank">我的农场</a>
         <span>|</span>
-        <a class="tx" href="sellerCenterPutaway.jsp" target="_black">卖家中心</a>
+        <a class="tx" href="sellerCenterPutaway.jsp" target="_blank">卖家中心</a>
       </li>
       </ul>
 </div>

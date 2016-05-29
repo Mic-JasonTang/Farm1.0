@@ -60,19 +60,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     </c:choose>
     </li>
     <li class="list">
-        <a class="tx" href="index.jsp" target="view_window">首页</a>
+        <a class="tx" href="index.jsp" target="_blank">首页</a>
         <span>|</span>      
-        <a class="tx" href="rentLand.jsp" target="view_window">认领土地</a>
+        <a class="tx" href="rentLand.jsp" target="_blank">认领土地</a>
         <span>|</span>
-        <a class="tx" href="rentTree.jsp" target="view_window">认领果树</a>
+        <a class="tx" href="rentTree.jsp" target="_blank">认领果树</a>
         <span>|</span>
-        <a class="tx" href="purchase.jsp" target="view_window">开心购买</a>
+        <a class="tx" href="purchase.jsp" target="_blank">开心购买</a>
         <span>|</span>
         <a class="tx" href="#">开心体验</a>
         <span>|</span>
-        <a class="tx" href="myFarm.jsp" target="view_window">我的农场</a>
+        <a class="tx" href="myFarm.jsp" target="_blank">我的农场</a>
         <span>|</span>
-        <a class="tx" href="sellerCenterPutaway.jsp" target="view_window">卖家中心</a>
+        <a class="tx" href="sellerCenterPutaway.jsp" target="_blank">卖家中心</a>
       </li>
       </ul>
 </div>

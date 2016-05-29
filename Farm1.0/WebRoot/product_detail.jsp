@@ -9,6 +9,7 @@
 <title>商品详情</title>
 <!-- 网站图标 -->
 <link rel="shortcut icon" href="ico/mogu.ico" type="image/x-icon" />
+
 <link rel="stylesheet" href="css/type.css" type="text/css">
 <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
 <link rel="stylesheet" href="css/jquery-labelauty.css">
@@ -91,13 +92,13 @@ input.labelauty+label {
 					</c:when>
 				</c:choose>
 			</li>
-			<li class="list"><a class="tx" href="#">首页</a> <span>|</span> <a
-				class="tx" href="rentLand.jsp" target="_black">认领土地</a> <span>|</span>
-				<a class="tx" href="rentTree.jsp" target="_black">认领果树</a> <span>|</span>
-				<a class="tx" href="purchase.jsp" target="_black">开心购买</a> <span>|</span>
-				<a class="tx" href="experience.jsp" target="_black">开心体验</a> <span>|</span>
-				<a class="tx" href="myFarm.jsp" target="_black">我的农场</a> <span>|</span>
-				<a class="tx" href="sellerCenterPutaway.jsp" target="_black">卖家中心</a>
+			<li class="list"><a class="tx" href="index.jsp">首页</a> <span>|</span> <a
+				class="tx" href="rentLand.jsp" target="_blank">认领土地</a> <span>|</span>
+				<a class="tx" href="rentTree.jsp" target="_blank">认领果树</a> <span>|</span>
+				<a class="tx" href="purchase.jsp" target="_blank">开心购买</a> <span>|</span>
+				<a class="tx" href="experience.jsp" target="_blank">开心体验</a> <span>|</span>
+				<a class="tx" href="myFarm.jsp" target="_blank">我的农场</a> <span>|</span>
+				<a class="tx" href="sellerCenterPutaway.jsp" target="_blank">卖家中心</a>
 			</li>
 		</ul>
 	</div>
@@ -129,7 +130,7 @@ input.labelauty+label {
 			<div class="col-xs-5">
 				<!-- 标题 -->
 				<div class="biaoti">
-					<ul class="tags">
+					<ul class="tags green">
 				      <li><a >${land.productName}<span>${land.productId }</span></a></li>
 				    </ul>
 				</div>
@@ -143,7 +144,7 @@ input.labelauty+label {
 				<form action="" method="post">
 					<div class="zhonglei">
 						<ul class="dowebok check">
-							<li>种植种类:&nbsp;&nbsp;&nbsp;</li>
+							<li>&nbsp;&nbsp;种植种类:&nbsp;&nbsp;&nbsp;</li>
 							<li><input type="checkbox" name="radio" data-labelauty="小白菜"
 								style="color:#000"></li>
 							<li>&nbsp;&nbsp;&nbsp;</li>
@@ -156,7 +157,7 @@ input.labelauty+label {
 					</div>
 					<div class="nianxian">
 						<ul class="dowebok check">
-							<li>种植年限:&nbsp;&nbsp;&nbsp;</li>
+							<li>&nbsp;&nbsp;种植年限:&nbsp;&nbsp;&nbsp;</li>
 							<li><input type="radio" name="radio" data-labelauty="半年"
 								style="color:#000"></li>
 							<li>&nbsp;&nbsp;&nbsp;</li>

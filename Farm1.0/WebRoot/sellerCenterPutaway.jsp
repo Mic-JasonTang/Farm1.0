@@ -89,7 +89,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<div class="w960 oh">
 					<a href="#" class="fl mt10"></a>
 					<nav id="navs" class="fr">
-						<a href="index.jsp" target="view_window">首页</a>
+						<a href="index.jsp" target="_blank">首页</a>
 						<a class="active" href="#">卖家中心</a>
 					</nav>
 				</div>

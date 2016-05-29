@@ -80,13 +80,13 @@
 					</c:when>
 				</c:choose>
 			</li>
-			<li class="list"><a class="tx" href="index.jsp" target="_black">首页</a>
-				<span>|</span> <a class="tx" href="#" target="_black">认领土地</a> <span>|</span>
-				<a class="tx" href="rentTree.jsp" target="_black">认领果树</a> <span>|</span>
-				<a class="tx" href="purchase.jsp" target="_black">开心购买</a> <span>|</span>
-				<a class="tx" href="experience.jsp" target="_black">开心体验</a> <span>|</span>
-				<a class="tx" href="myFarm.jsp" target="_black">我的农场</a> <span>|</span>
-				<a class="tx" href="sellerCenterPutaway.jsp" target="_black">卖家中心</a>
+			<li class="list"><a class="tx" href="index.jsp" target="_blank">首页</a>
+				<span>|</span> <a class="tx" href="#" target="_blank">认领土地</a> <span>|</span>
+				<a class="tx" href="rentTree.jsp" target="_blank">认领果树</a> <span>|</span>
+				<a class="tx" href="purchase.jsp" target="_blank">开心购买</a> <span>|</span>
+				<a class="tx" href="experience.jsp" target="_blank">开心体验</a> <span>|</span>
+				<a class="tx" href="myFarm.jsp" target="_blank">我的农场</a> <span>|</span>
+				<a class="tx" href="sellerCenterPutaway.jsp" target="_blank">卖家中心</a>
 			</li>
 		</ul>
 	</div>
@@ -144,11 +144,16 @@
 						    	<c:param name="imagePath" value="${sessionScope.images.get(i-1).relativePath}"></c:param>
 						    </c:url>
 						    <a
-							href="<c:out value='${url }'/>"><img
+							href="<c:out value='${url }'/>" target="_blank"><img
 								src="${sessionScope.images.get(i-1).relativePath}"
 								style="width: 300px; height: 220px;" /></a>
 							<p id="title" style="color:green">
+								<c:if test="${i%2==0}">
 								<img src="product_ico/tuijian.gif">
+								</c:if>
+								<c:if test="${i%2!=0}">
+								<img src="product_ico/tuijian_1.gif">
+								</c:if>
 								${sessionScope.lands.get(i-1).productName}
 							</p>
 							<p id="price" style="color:#FF3300;font-size:20px;">

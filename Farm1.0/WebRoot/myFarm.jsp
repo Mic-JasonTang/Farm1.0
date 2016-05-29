@@ -40,9 +40,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<div id="headBox">
 				<div class="w960 oh">
 					<nav id="navs" class="fr">
-						<a href="index.jsp" target="view_window">首页</a>
+						<a href="index.jsp" target="_blank">首页</a>
 						<a class="active" href="#">我的农场</a>
-						<a  href="update.jsp" target="view_window">信息更新</a>
+						<a  href="update.jsp" target="_blank">信息更新</a>
 					</nav>
 				</div>
 			</div>
